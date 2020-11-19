@@ -4,5 +4,8 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"vetur.format.defaultFormatter.js": "none",
+		"vetur.format.defaultFormatter.css": "none"
+	}
 }

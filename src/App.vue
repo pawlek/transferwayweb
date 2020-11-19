@@ -1,24 +1,42 @@
 <template>
-	<div class="container" id="app">
-		<v-button @click.native="showModal = !showModal">  <span slot="button">Open Modal</span> </v-button>
+    <div class="container" id="app">
+        <v-button @click.native="showModal = !showModal">
+            <span slot="button">Open Modal</span>
+        </v-button>
 
-		<transition name="modal-transition" enter-active-class="animate__slideInUp" leave-active-class="animate__slideOutDown" v-on:enter="enter" v-on:leave="leave">
-			<v-modal v-show="showModal" class="sign-in-modal animate__animated animate__faster">
-				<h3 slot="header">custom header</h3>
-				<div slot="body">
-					<div v-for="(currency, index) in info" class="currency" :key="index">
-						{{ currency.description }} | {{index}}:
-						<span class="lighten">
-							<span v-html="currency.symbol"></span>{{ currency.rate_float | currencydecimal }}
-						</span>
-					</div>
-				</div>
-				<div slot="footer"> 
-					<v-button @click.native="showModal = false"> Click </v-button>
-				</div>
-			</v-modal>
-		</transition>
-	</div>
+        <transition
+            name="modal-transition"
+            enter-active-class="animate__slideInUp"
+            leave-active-class="animate__slideOutDown"
+            v-on:enter="enter"
+            v-on:leave="leave"
+        >
+            <v-modal
+                v-show="showModal"
+                class="sign-in-modal animate__animated animate__faster"
+            >
+                <h3 slot="header">custom header</h3>
+                <div slot="body">
+                    <div
+                        v-for="(currency, index) in info"
+                        class="currency"
+                        :key="index"
+                    >
+                        {{ currency.description }} | {{ index }}:
+                        <span class="lighten">
+                            <span v-html="currency.symbol"></span
+                            >{{ currency.rate_float | currencydecimal }}
+                        </span>
+                    </div>
+                </div>
+                <div slot="footer">
+                    <v-button @click.native="showModal = false">
+                        Click
+                    </v-button>
+                </div>
+            </v-modal>
+        </transition>
+    </div>
 </template>
 
 
@@ -73,9 +91,8 @@
 	.container{
 		height: 100%;
 		position: relative;
-		background: lightblue;
+		background: url('~@/assets/img/user-bgg.jpg');
 	}
-
 	#app {
 	font-family: Avenir, Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
