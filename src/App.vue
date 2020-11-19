@@ -88,10 +88,18 @@
 		height: 100%;
 		width: 100%;
 	}
+	.no-webp .container {
+		background: url('~@/assets/img/user-bgg.jpg');
+		background-size: cover;
+	}
+
+	.webp .container {
+		background: url('~@/assets/img/user-bgg.webp');
+		background-size: cover;
+	}
 	.container{
 		height: 100%;
 		position: relative;
-		background: url('~@/assets/img/user-bgg.jpg');
 	}
 	#app {
 	font-family: Avenir, Helvetica, Arial, sans-serif;
