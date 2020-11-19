@@ -6,6 +6,7 @@ import * as Sentry from "@sentry/browser";
 import { Vue as VueIntegration } from "@sentry/integrations";
 import { Integrations } from "@sentry/tracing";
 import 'animate.css';
+import './assets/js/webp-check.js';
 
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios
