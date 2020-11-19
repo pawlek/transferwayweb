@@ -1,6 +1,6 @@
 <template>
 	<div class="container" id="app">
-		<v-button @click.native="showModal = !showModal"> </v-button>
+		<v-button @click.native="showModal = !showModal">  <span slot="button">Open Modal</span> </v-button>
 
 		<transition name="modal-transition" enter-active-class="animate__slideInUp" leave-active-class="animate__slideOutDown" v-on:enter="enter" v-on:leave="leave">
 			<v-modal v-show="showModal" class="sign-in-modal animate__animated animate__faster">
