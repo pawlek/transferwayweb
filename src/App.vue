@@ -4,6 +4,9 @@
             <span slot="button">Open Modal</span>
         </v-button>
 
+        <v-form></v-form>
+        <v-google-map></v-google-map>
+
         <transition
             name="modal-transition"
             enter-active-class="animate__slideInUp"
@@ -43,12 +46,17 @@
 <script>
 	import ModalComponent from '@/components/ModalComponent'
 	import ButtonsComponent from '@/components/ButtonsComponent'
+	import OrderFormComponent from '@/components/OrderFormComponent'
+	import GoogleMapComponent from '@/components/GoogleMapComponent'
 	
 	export default {
 		name: 'App',
 		components: {
 			'v-modal': ModalComponent,
-			'v-button': ButtonsComponent
+			'v-button': ButtonsComponent,
+            'v-form': OrderFormComponent,
+            'v-google-map': GoogleMapComponent,
+            
 		},
         data() {
 			return {
