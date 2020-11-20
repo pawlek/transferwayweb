@@ -14,38 +14,6 @@
     </div>
 </template>
 
-<script>
-	export default {
-		name: 'modal-item',
-
-		data() {
-			return {
-				showModal: false,
-				info: null
-			};
-		},
-		methods: {
-			enter: function (el) {
-				console.log("open modal")
-			},
-			leave: function (el) {
-				console.log("close modal")
-			},
-		},
-		mounted() {
-			this.$axios
-			.get('https://api.coindesk.com/v1/bpi/currentprice.json')
-			.then(response => (this.info = response.data.bpi))
-			.catch(error => console.log(error));
-		},
-		filters: {
-			currencydecimal (value) {
-				return value.toFixed(2)
-			}
-		}
-	}
-</script>
-
 
 <style  lang="scss" scoped>
 .modal {
