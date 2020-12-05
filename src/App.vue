@@ -1,11 +1,11 @@
 <template>
     <div class="container" id="app">
+        <section-first />
+        <section-second />
+		
         <v-button @click.native="showModal = !showModal">
             <span slot="button">Open Modal</span>
         </v-button>
-
-        <v-form></v-form>
-        <v-google-map></v-google-map>
 
         <transition
             name="modal-transition"
@@ -44,19 +44,22 @@
 
 
 <script>
+	import SectionFirst from '@/components/SectionFirst'
+	import SectionSecond from '@/components/SectionSecond'
+
 	import ModalComponent from '@/components/ModalComponent'
 	import ButtonsComponent from '@/components/ButtonsComponent'
-	import OrderFormComponent from '@/components/OrderFormComponent'
+	
 	import GoogleMapComponent from '@/components/GoogleMapComponent'
 	
 	export default {
 		name: 'App',
 		components: {
+			'section-first': SectionFirst,
+			'section-second': SectionSecond,
 			'v-modal': ModalComponent,
 			'v-button': ButtonsComponent,
-            'v-form': OrderFormComponent,
-            'v-google-map': GoogleMapComponent,
-            
+            'v-google-map': GoogleMapComponent
 		},
         data() {
 			return {
@@ -102,7 +105,7 @@
 	}
 
 	.webp .container {
-		background: url('~@/assets/img/user-bgg.webp');
+		background: url('~@/assets/img/bgg.webp');
 		background-size: cover;
 	}
 	.container{

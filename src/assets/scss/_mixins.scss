@@ -1,0 +1,8 @@
+@mixin border-radius($pixel...) {
+  border-radius: $pixel;
+}
+
+@mixin block($size) {
+  width: $size;
+  height: $size;
+}
