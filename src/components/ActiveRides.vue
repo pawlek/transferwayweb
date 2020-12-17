@@ -265,11 +265,11 @@
         methods: {
             fetchAllData:function(){
                 axios.post('action.php', {
-                    action: 'fetchall'
+                    action:'fetchall'
                 }).then(function(response){
                     application.allData = response.data;
                 });
-            }
+            },
         },
         created: function(){
             this.fetchAllData();
