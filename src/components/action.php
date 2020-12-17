@@ -1,10 +1,10 @@
 <?php
-    // const DB_HOST = 'localhost';
-    // const DB_USER = 'extraver_taxiairport';
-    // const DB_PASS = '-vV-yU6z57';
-    // const DB_NAME = 'extraver_taxiairport';
+    $DBHOST = 'extraver.mysql.tools';
+    $DBUSER = 'extraver_taxiairport';
+    $DBPASS = '-vV-yU6z57';
+    $DBNAME = 'extraver_taxiairport';
 
-    $connect = new PDO("mysql:host=extraver.mysql.tools; dbname=extraver_taxiairport;", "extraver_taxiairport", "-vV-yU6z57");
+    $connect = new PDO("mysql:host=$DBHOST; dbname=$DBNAME;", $DBUSER, $DBPASS);
     $received_data = json_decode(file_get_contents("php://input"));
     $data = array();
     if($received_data->action == 'fetchall'){
