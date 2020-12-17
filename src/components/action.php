@@ -1,5 +1,5 @@
 <?php
-    $host = 'extraver.mysql.tools';
+    $host = '185.68.16.71';
     $user = 'extraver_taxiairport';
     $password = '-vV-yU6z57';
     $dbname = 'extraver_taxiairport';
