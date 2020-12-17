@@ -92,32 +92,18 @@
 			leave: function (el) {
 				console.log("close modal")
 			},
-			getRides: function(){
-                axios.get('action.php')
-                .then(function (response) {
-                    console.log(response.data);
-                    app.rides = response.data;
-                })
-                .catch(function (error) {
-                    console.log(error);
-                });
-			},
-			getCoins: function(){
-                axios.get('https://api.coindesk.com/v1/bpi/currentprice.json')
-                .then(function (response) {
-                    this.info = response.data.bpi
-                })
-                .catch(function (error) {
-                    console.log(error);
-                });
-            }
 		},
 		mounted() {
-			this.getCoins();
-			// this.$axios
-			// .get('https://api.coindesk.com/v1/bpi/currentprice.json')
-			// .then(response => (this.info = response.data.bpi))
-			// .catch(error => console.log(error));
+			// this.getRides();
+			this.$axios
+			.get('action.php')
+			.then(response => (app.rides = response.data))
+			.catch(error => console.log(error));
+
+			this.$axios
+			.get('https://api.coindesk.com/v1/bpi/currentprice.json')
+			.then(response => (this.info = response.data.bpi))
+			.catch(error => console.log(error));
 		},
 		filters: {
 			currencydecimal (value) {
