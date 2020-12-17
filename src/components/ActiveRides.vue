@@ -268,6 +268,7 @@
                 axios.get('action.php')
                 .then(function (response) {
                     app.allData = response.data;
+                    console.log(response);
                 })
                 .catch(function (error) {
                     console.log(error);
