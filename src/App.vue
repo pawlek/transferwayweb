@@ -1,11 +1,14 @@
 <template>
     <div class="container" id="app">
-        <section-first />
-        <section-second />
+        <!-- <section-first /> -->
+        <active-rides />
+        <!-- <section-second /> -->
+        <!-- <section-third /> -->
+	
 		
-        <v-button @click.native="showModal = !showModal">
+        <!-- <v-button @click.native="showModal = !showModal">
             <span slot="button">Open Modal</span>
-        </v-button>
+        </v-button> -->
 
         <transition
             name="modal-transition"
@@ -46,17 +49,22 @@
 <script>
 	import SectionFirst from '@/components/SectionFirst'
 	import SectionSecond from '@/components/SectionSecond'
+	import SectionThird from '@/components/SectionThird'
+	import ActiveRides from '@/components/ActiveRides'
 
 	import ModalComponent from '@/components/ModalComponent'
 	import ButtonsComponent from '@/components/ButtonsComponent'
 	
 	import GoogleMapComponent from '@/components/GoogleMapComponent'
 	
+	
 	export default {
 		name: 'App',
 		components: {
 			'section-first': SectionFirst,
 			'section-second': SectionSecond,
+			'section-third': SectionThird,
+			'active-rides': ActiveRides,
 			'v-modal': ModalComponent,
 			'v-button': ButtonsComponent,
             'v-google-map': GoogleMapComponent
@@ -113,10 +121,10 @@
 		position: relative;
 	}
 	#app {
-	font-family: Avenir, Helvetica, Arial, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-align: center;
-	color: #2c3e50;
+		font-family: Avenir, Helvetica, Arial, sans-serif;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-align: center;
+		color: #2c3e50;
 	}
 </style>
