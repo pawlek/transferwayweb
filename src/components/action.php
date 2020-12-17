@@ -5,16 +5,15 @@
     // const DB_NAME = 'extraver_taxiairport';
 
     $connect = new PDO("mysql:host=localhost; dbname=extraver_taxiairport;", "extraver_taxiairport", "-vV-yU6z57");
-
-    $recieved_data = json_decode(file_get_contents("php://input"));
-
+    $received_data = json_decode(file_get_contents("php://input"));
     $data = array();
-
-    if($recieved_data->action == 'fetchall'){
-        $query = " SELECT * FROM rides";
-        $statment = $connect->prepare($query);
-        $statment->execute();
-        while($row = $statment->fetch(PDO::FETCH_ASSOC)){
+    if($received_data->action == 'fetchall'){
+        $query = "
+            SELECT * FROM rides
+        ";
+        $statement = $connect->prepare($query);
+        $statement->execute();
+        while($row = $statement->fetch(PDO::FETCH_ASSOC)){
             $data[] = $row;
         }
         echo json_encode($data);
