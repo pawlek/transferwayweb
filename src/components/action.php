@@ -1,5 +1,5 @@
 <?php
-    $host = '185.68.16.71';
+    $host = 'extraver.mysql.tools';
     $user = 'extraver_taxiairport';
     $password = '-vV-yU6z57';
     $dbname = 'extraver_taxiairport';
@@ -24,5 +24,4 @@
 
     echo json_encode($response);
     exit;
-
 ?>
