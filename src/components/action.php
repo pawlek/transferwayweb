@@ -1,9 +1,8 @@
 <?php
-    $host = "localhost"; 
-    $user = "root"; 
-    $password = "YOUR_MYSQL_DB_PASSWORD"; 
-    $dbname = "vuedb"; 
-    $id = '';
+    $host = 'extraver.mysql.tools';
+    $user = 'extraver_taxiairport';
+    $password = '-vV-yU6z57';
+    $dbname = 'extraver_taxiairport';
 
     $con = mysqli_connect($host, $user, $password,$dbname);
 

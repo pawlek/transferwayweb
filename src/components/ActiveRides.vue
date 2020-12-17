@@ -275,9 +275,6 @@
                 });
             },
         },
-        // created: function(){
-        //     this.allRecords();
-        // },
         mounted() {
             console.log('Hello from Vue!');
             this.getRides();
