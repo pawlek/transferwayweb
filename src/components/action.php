@@ -23,13 +23,13 @@
         case 'GET':
             $id = isset($_GET['id']) ? intval($_GET['id']) : '';
             if ($id > 0) {
-                $sql = "select * from contacts where id=:id";
+                $sql = "select * from rides where id=:id";
                 $sql_data = ['id' => $id];
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute($sql_data);
                 $result = $stmt->fetch();
             } else {
-                $sql = "select * from contacts";
+                $sql = "select * from rides";
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute($sql_data);
                 $result = $stmt->fetch();
