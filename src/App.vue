@@ -81,7 +81,8 @@
         data() {
 			return {
 				showModal: false,
-				info: null
+				info: null,
+				rides: "",
 			};
 		},
 		methods: {
