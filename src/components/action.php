@@ -4,7 +4,7 @@
     // const DB_PASS = '-vV-yU6z57';
     // const DB_NAME = 'extraver_taxiairport';
 
-    $connect = new PDO("mysql:host=localhost; dbname=extraver_taxiairport;", "extraver_taxiairport", "-vV-yU6z57");
+    $connect = new PDO("mysql:host=extraver.mysql.tools; dbname=extraver_taxiairport;", "extraver_taxiairport", "-vV-yU6z57");
     $received_data = json_decode(file_get_contents("php://input"));
     $data = array();
     if($received_data->action == 'fetchall'){
