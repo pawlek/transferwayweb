@@ -16,7 +16,7 @@
     <div class="tbl-content">
         <table cellpadding="0" cellspacing="0" border="0">
         <tbody>
-            <tr v-for="row in allData" :key="row">
+            <tr v-for="ride in rides" :key="ride">
                 <td>{{row.id}}</td>
                 <td>{{row.date}}</td>
                 <td>{{row.route}}</td>
@@ -259,26 +259,29 @@
         name: 'ActiveRides',
         data() {
 			return {
-				allData: '',
+				rides: '',
 			};
 		},
         methods: {
-            allRecords: function(){
-
+            getRides: function(){
                 axios.get('action.php')
                 .then(function (response) {
-                    app.allData = response.data;
-                    console.log(response);
+                    console.log(response.data);
+                    app.rides = response.data;
+
                 })
                 .catch(function (error) {
                     console.log(error);
                 });
             },
         },
-        created: function(){
-            this.allRecords();
-        },
+        // created: function(){
+        //     this.allRecords();
+        // },
         mounted() {
+            console.log('Hello from Vue!');
+            this.getRides();
+
             $(window).on("load resize ", function() {
                 var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
                 $('.tbl-header').css({'padding-right':scrollWidth});
