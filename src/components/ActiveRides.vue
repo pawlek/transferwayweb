@@ -72,9 +72,10 @@
                 });
             }
         },
+        created:function(){
+            this.fetchAllData();
+        },
         mounted() {
-            console.log('Hello from Vue!');
-            this.getRides();
 
             $(window).on("load resize ", function() {
                 var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();

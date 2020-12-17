@@ -92,14 +92,18 @@
 			leave: function (el) {
 				console.log("close modal")
 			},
+			fetchAllData:function(){
+				axios.post('action.php', {
+					action:'fetchall'
+				}).then(function(response){
+					application.allData = response.data;
+				});
+			}
 		},
+        created:function(){
+            this.fetchAllData();
+        },
 		mounted() {
-			// this.getRides();
-			this.$axios
-			.get('action.php')
-			.then(response => (app.rides = response.data))
-			.catch(error => console.log(error));
-
 			this.$axios
 			.get('https://api.coindesk.com/v1/bpi/currentprice.json')
 			.then(response => (this.info = response.data.bpi))
