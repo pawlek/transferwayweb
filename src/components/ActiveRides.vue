@@ -16,12 +16,13 @@
     <div class="tbl-content">
         <table cellpadding="0" cellspacing="0" border="0">
         <tbody>
-            <tr v-for="row in allData"></tr>
+            <tr v-bind:key="row" v-for="row in allData">
                 <td>{{row.id}}</td>
                 <td>{{row.date}}</td>
                 <td>{{row.route}}</td>
                 <td>{{row.passengers}}</td>
                 <td></td>
+            </tr>
             <tr>
                 <td>AAC</td>
                 <td>AUSTRALIAN COMPANY </td>
