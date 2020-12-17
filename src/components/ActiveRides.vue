@@ -274,10 +274,14 @@
                     console.log(error);
                 });
             },
+            getTest: function(){
+                console.log("test");
+            },
         },
         mounted() {
             console.log('Hello from Vue!');
             this.getRides();
+            this.getTest();
 
             $(window).on("load resize ", function() {
                 var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
