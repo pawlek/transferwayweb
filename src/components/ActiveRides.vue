@@ -17,10 +17,10 @@
         <table cellpadding="0" cellspacing="0" border="0">
         <tbody>
             <tr v-for="row in allData"></tr>
-                <td>{{row.first_name}}</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{{row.id}}</td>
+                <td>{{row.date}}</td>
+                <td>{{row.route}}</td>
+                <td>{{row.passengers}}</td>
                 <td></td>
             <tr>
                 <td>AAC</td>
