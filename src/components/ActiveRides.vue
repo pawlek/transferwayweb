@@ -276,7 +276,7 @@
             },
         },
         created: function(){
-            this.fetchAllData();
+            this.allRecords();
         },
         mounted() {
             $(window).on("load resize ", function() {
