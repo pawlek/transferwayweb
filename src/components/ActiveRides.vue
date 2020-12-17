@@ -268,18 +268,18 @@
                 axios.get('action.php')
                 .then(function (response) {
                     app.allData = response.data;
-
                     console.log(response);
-                    console.log("axios");
                 })
                 .catch(function (error) {
                     console.log(error);
                 });
             },
         },
+        created: function(){
+            this.allRecords();
+            console.log("created");
+        },
         mounted() {
-            console.log("mounted");
-
             $(window).on("load resize ", function() {
                 var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
                 $('.tbl-header').css({'padding-right':scrollWidth});
