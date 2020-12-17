@@ -1,14 +1,23 @@
 <template>
     <div class="container" id="app">
         <!-- <section-first /> -->
-        <active-rides />
+        <!-- <active-rides /> -->
         <!-- <section-second /> -->
         <!-- <section-third /> -->
+		<table>
+			<tr v-for="ride in rides" :key="ride">
+                <td>{{row.id}}</td>
+                <td>{{row.date}}</td>
+                <td>{{row.route}}</td>
+                <td>{{row.passengers}}</td>
+                <td>{{row.status}}</td>
+            </tr>
+		</table>
 	
 		
-        <!-- <v-button @click.native="showModal = !showModal">
+        <v-button @click.native="showModal = !showModal">
             <span slot="button">Open Modal</span>
-        </v-button> -->
+        </v-button>
 
         <transition
             name="modal-transition"
@@ -82,8 +91,19 @@
 			leave: function (el) {
 				console.log("close modal")
 			},
+			getRides: function(){
+                axios.get('action.php')
+                .then(function (response) {
+                    console.log(response.data);
+                    app.rides = response.data;
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+            }
 		},
 		mounted() {
+			this.getRides();
 			this.$axios
 			.get('https://api.coindesk.com/v1/bpi/currentprice.json')
 			.then(response => (this.info = response.data.bpi))
