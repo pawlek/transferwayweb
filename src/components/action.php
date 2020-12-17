@@ -4,14 +4,14 @@
     const DB_PASS = '-vV-yU6z57';
     const DB_NAME = 'extraver_taxiairport';
 
-    $connect = new PDO("mysql:host='DB_HOST'; dbname='DB_NAME'; 'DB_USER', 'DB_PASS' ");
+    $connect = new PDO("mysql:host=localhost; dbname=extraver_taxiairport;", "extraver_taxiairport", "-vV-yU6z57");
 
     $recieved_data = json_decode(file_get_contents("php://input"));
 
     $data = array();
 
     if($recieved_data->action == 'fetchall'){
-        $query = " ";
+        $query = " SELECT * FROM rides";
         $statment = $connect->prepare($query);
         $statment->execute();
         while($row = $statment->fetch(PDO::FETCH_ASSOC)){
