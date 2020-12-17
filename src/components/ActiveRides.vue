@@ -271,7 +271,7 @@
             }
         },
         created: function(){
-
+            this.fetchAllData();
         },
         mounted() {
             $(window).on("load resize ", function() {
