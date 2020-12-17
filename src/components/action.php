@@ -4,7 +4,13 @@
     $DBPASS = '-vV-yU6z57';
     $DBNAME = 'extraver_taxiairport';
 
-    $connect = new PDO("mysql:host=$DBHOST; dbname=$DBNAME;", $DBUSER, $DBPASS);
+    
+    try {
+        $connect = new PDO("mysql:host=$DBHOST; dbname=$DBNAME;", $DBUSER, $DBPASS);
+    } catch (PDOException $e) {
+        echo 'Подключение не удалось: ' . $e->getMessage();
+    }
+
     $received_data = json_decode(file_get_contents("php://input"));
     $data = array();
     if($received_data->action == 'fetchall'){
