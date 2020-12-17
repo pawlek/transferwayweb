@@ -101,14 +101,23 @@
                 .catch(function (error) {
                     console.log(error);
                 });
+			},
+			getCoins: function(){
+                axios.get('https://api.coindesk.com/v1/bpi/currentprice.json')
+                .then(function (response) {
+                    this.info = response.data.bpi
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
             }
 		},
 		mounted() {
-			// this.getRides();
-			this.$axios
-			.get('https://api.coindesk.com/v1/bpi/currentprice.json')
-			.then(response => (this.info = response.data.bpi))
-			.catch(error => console.log(error));
+			this.getCoins();
+			// this.$axios
+			// .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+			// .then(response => (this.info = response.data.bpi))
+			// .catch(error => console.log(error));
 		},
 		filters: {
 			currencydecimal (value) {
