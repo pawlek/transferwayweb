@@ -1,5 +1,5 @@
 <?php
-    $host = 'extraver.mysql.tools';
+    $host = 'extraver.mysql.ukraine.com.ua';
     $user = 'extraver_taxiairport';
     $password = '-vV-yU6z57';
     $dbname = 'extraver_taxiairport';
