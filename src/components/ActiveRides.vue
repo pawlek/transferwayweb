@@ -277,7 +277,6 @@
         },
         created: function(){
             this.allRecords();
-            console.log("created");
         },
         mounted() {
             $(window).on("load resize ", function() {

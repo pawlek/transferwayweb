@@ -14,7 +14,7 @@
     // if(isset($_GET['userid'])){
     //     $condition = " id=".$_GET['userid'];
     // }
-    $userData = mysqli_query($con,"select * from users WHERE ");
+    $userData = mysqli_query($con,"select * from rides ");
 
     $response = array();
 
