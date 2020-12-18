@@ -82,7 +82,7 @@
 			return {
 				showModal: false,
 				info: null,
-				rides: [],
+				rides: '',
 			};
 		},
 		methods: {
@@ -92,24 +92,22 @@
 			leave: function (el) {
 				console.log("close modal")
 			},
-			getAllRides: function() {
-                axios.get('action.php')
-                .then(function(response) {
-                    console.log(response.data);
-                    app.rides = response.data;
-                })
-                .catch(function(error) {
-                    console.log(error);
-                });
-            },
+			getAllRides:function(){
+				axios.post('action.php', {
+					action:'fetchall'
+				}).then(function(response){
+					app.rides = response.data;
+				});
+			}
+		},
+		created:function(){
+			this.getAllRides();
 		},
 		mounted() {
 			this.$axios
 			.get('https://api.coindesk.com/v1/bpi/currentprice.json')
 			.then(response => (this.info = response.data.bpi))
 			.catch(error => console.log(error));
-
-			this.getAllRides();
 		},
 		filters: {
 			currencydecimal (value) {
